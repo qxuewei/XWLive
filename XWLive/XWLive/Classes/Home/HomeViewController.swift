@@ -32,6 +32,7 @@ extension HomeViewController {
         guard let _searchField = searchBar.value(forKey: "_searchField") as? UITextField else {
             return
         }
+//        _searchField.selectedTextRange
         _searchField.textColor = UIColor.white
         navigationItem.titleView = searchBar
     }

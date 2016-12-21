@@ -22,6 +22,7 @@
 		2EB14FD31E026F3900DEBE2A /* RanKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FD21E026F3900DEBE2A /* RanKViewController.swift */; };
 		2EB14FD51E02737800DEBE2A /* NSObject-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FD41E02737800DEBE2A /* NSObject-Extension.swift */; };
 		2EB14FD71E027B4500DEBE2A /* XWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FD61E027B4500DEBE2A /* XWNavigationController.swift */; };
+		2EBF760E1E078C4500EBFFBA /* UITextField-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF760D1E078C4500EBFFBA /* UITextField-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		2EB14FD21E026F3900DEBE2A /* RanKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RanKViewController.swift; sourceTree = "<group>"; };
 		2EB14FD41E02737800DEBE2A /* NSObject-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject-Extension.swift"; sourceTree = "<group>"; };
 		2EB14FD61E027B4500DEBE2A /* XWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWNavigationController.swift; sourceTree = "<group>"; };
+		2EBF760D1E078C4500EBFFBA /* UITextField-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				2EB14FD41E02737800DEBE2A /* NSObject-Extension.swift */,
 				2EB14FD61E027B4500DEBE2A /* XWNavigationController.swift */,
+				2EBF760D1E078C4500EBFFBA /* UITextField-Extension.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				2EB14FD31E026F3900DEBE2A /* RanKViewController.swift in Sources */,
 				2EB14FC41E02635700DEBE2A /* HomeViewController.swift in Sources */,
 				2EB14FD51E02737800DEBE2A /* NSObject-Extension.swift in Sources */,
+				2EBF760E1E078C4500EBFFBA /* UITextField-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +410,7 @@
 				2EB14FB71E024D9100DEBE2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
