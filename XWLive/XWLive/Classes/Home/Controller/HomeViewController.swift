@@ -61,7 +61,7 @@ extension HomeViewController {
         for homeType in homeTypes {
             let anchorVC = AnchorViewController()
             anchorVC.homeType = homeType
-            anchorVC.view.backgroundColor = UIColor.getRandomColor()
+
             childVCs.append(anchorVC)
         }
         let pageView : XWPageView = XWPageView(frame: pageFrame, titles: titles, style: style, childVcs: childVCs, parentVc: self)
