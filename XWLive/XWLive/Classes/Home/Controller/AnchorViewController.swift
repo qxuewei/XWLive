@@ -68,7 +68,7 @@ extension AnchorViewController :XWWaterFallLayoutDataSource,UICollectionViewDele
         
     }
     func numberOfCols(_waterFallLayout: XWWaterFallLayout) -> Int {
-        return 3
+        return 2
     }
     func itemHeight(_waterFallLayout: XWWaterFallLayout, item: Int) -> CGFloat {
         return item % 2 == 0 ? kScreenW * 2 / 3 : kScreenW * 0.5
