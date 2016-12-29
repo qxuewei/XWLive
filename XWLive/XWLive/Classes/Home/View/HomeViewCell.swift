@@ -20,16 +20,22 @@ class HomeViewCell: UICollectionViewCell {
     // MARK: 定义属性
     var anchorModel : AnchorModel? {
         didSet {
-            guard let isEvenIndex = anchorModel?.isEvenIndex else {
-                return
-            }
-            guard let pic74 = anchorModel?.pic74 else {
-                return
-            }
-            guard let pic51 = anchorModel?.pic51 else {
-                return
-            }
-            albumImageView.kf.setImage(with: (isEvenIndex ? pic74 : pic51) as? Resource, placeholder: Image(named: "home_pic_default"), options: nil, progressBlock: nil, completionHandler: nil)
+            
+            
+            let resource : String = (anchorModel!.isEvenIndex ? anchorModel?.pic74 : anchorModel?.pic51)!
+            let url = URL(string: resource)
+            albumImageView.kf.setImage(with: url)
+            
+//            guard let isEvenIndex = anchorModel?.isEvenIndex else {
+//                return
+//            }
+//            guard let pic74 = anchorModel?.pic74 else {
+//                return
+//            }
+//            guard let pic51 = anchorModel?.pic51 else {
+//                return
+//            }
+//            albumImageView.kf.setImage(with: (isEvenIndex ? pic74 : pic51) as? Resource, placeholder: Image(named: "home_pic_default"), options: nil, progressBlock: nil, completionHandler: nil)
             liveImageView.isHidden = anchorModel?.live == 0
             nickNameLabel.text = anchorModel?.name
             onlinePeopleLabel.setTitle("\(anchorModel?.focus ?? 0)", for: .normal)

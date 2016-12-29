@@ -24,6 +24,7 @@ class NetworkTool {
                 print("请求失败\(response.result.error!)")
                 return
             }
+            print("请求到数据为:\(result)")
             //4.结果回调
             finishedCallback(result)
         }
