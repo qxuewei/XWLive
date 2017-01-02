@@ -65,7 +65,8 @@ extension AnchorViewController :XWWaterFallLayoutDataSource,UICollectionViewDele
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let roomVc = RoomViewController()
+        navigationController?.pushViewController(roomVc, animated: true)
     }
     func numberOfCols(_waterFallLayout: XWWaterFallLayout) -> Int {
         return 2
