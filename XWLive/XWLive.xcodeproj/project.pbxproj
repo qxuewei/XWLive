@@ -42,6 +42,12 @@
 		2EB14FD11E026E7400DEBE2A /* Rank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB14FD01E026E7400DEBE2A /* Rank.storyboard */; };
 		2EB14FD31E026F3900DEBE2A /* RanKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FD21E026F3900DEBE2A /* RanKViewController.swift */; };
 		2EB14FD71E027B4500DEBE2A /* XWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FD61E027B4500DEBE2A /* XWNavigationController.swift */; };
+		2EDF31B21E1CD59D003B52AB /* ChatToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EDF31B11E1CD59D003B52AB /* ChatToolsView.xib */; };
+		2EDF31B41E1CD5AA003B52AB /* ChatToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF31B31E1CD5AA003B52AB /* ChatToolsView.swift */; };
+		2EDF31B71E1CD789003B52AB /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF31B61E1CD789003B52AB /* NibLoadable.swift */; };
+		2EDF31BB1E1CDD55003B52AB /* EmoticonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EDF31BA1E1CDD55003B52AB /* EmoticonViewCell.xib */; };
+		2EDF31BD1E1CDD6E003B52AB /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF31BC1E1CDD6E003B52AB /* EmoticonViewCell.swift */; };
+		2EDF31BF1E1D08B9003B52AB /* EmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF31BE1E1D08B9003B52AB /* EmoticonView.swift */; };
 		F67ACC1F7080BEAC02F5CD49 /* Pods_XWLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA0F15380AED503C794B75E /* Pods_XWLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +90,12 @@
 		2EB14FD01E026E7400DEBE2A /* Rank.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rank.storyboard; sourceTree = "<group>"; };
 		2EB14FD21E026F3900DEBE2A /* RanKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RanKViewController.swift; sourceTree = "<group>"; };
 		2EB14FD61E027B4500DEBE2A /* XWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWNavigationController.swift; sourceTree = "<group>"; };
+		2EDF31B11E1CD59D003B52AB /* ChatToolsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatToolsView.xib; sourceTree = "<group>"; };
+		2EDF31B31E1CD5AA003B52AB /* ChatToolsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatToolsView.swift; sourceTree = "<group>"; };
+		2EDF31B61E1CD789003B52AB /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		2EDF31BA1E1CDD55003B52AB /* EmoticonViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonViewCell.xib; sourceTree = "<group>"; };
+		2EDF31BC1E1CDD6E003B52AB /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
+		2EDF31BE1E1D08B9003B52AB /* EmoticonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonView.swift; sourceTree = "<group>"; };
 		4DA0F15380AED503C794B75E /* Pods_XWLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CD7D36271F3D20C7D73120 /* Pods-XWLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWLive/Pods-XWLive.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +168,7 @@
 		2E1B7A1A1E0D2A3400505217 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2EDF31B01E1CCEE7003B52AB /* ChatView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +287,7 @@
 		2EB14FB91E0261C800DEBE2A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2EDF31B51E1CD666003B52AB /* Protocols */,
 				2E23C1431E129842002A5514 /* Tool */,
 				2E1B79FA1E0D20C000505217 /* Model */,
 				2EB14FD61E027B4500DEBE2A /* XWNavigationController.swift */,
@@ -337,6 +351,26 @@
 			path = Rank;
 			sourceTree = "<group>";
 		};
+		2EDF31B01E1CCEE7003B52AB /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				2EDF31B31E1CD5AA003B52AB /* ChatToolsView.swift */,
+				2EDF31B11E1CD59D003B52AB /* ChatToolsView.xib */,
+				2EDF31BC1E1CDD6E003B52AB /* EmoticonViewCell.swift */,
+				2EDF31BA1E1CDD55003B52AB /* EmoticonViewCell.xib */,
+				2EDF31BE1E1D08B9003B52AB /* EmoticonView.swift */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
+		2EDF31B51E1CD666003B52AB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2EDF31B61E1CD789003B52AB /* NibLoadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CA57D653F55F9FC3BBD84EA1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,7 +410,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "邱学伟";
 				TargetAttributes = {
 					2EB14FA21E024D9100DEBE2A = {
@@ -409,7 +443,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDF31B21E1CD59D003B52AB /* ChatToolsView.xib in Resources */,
 				2EB14FCD1E026D2600DEBE2A /* Profile.storyboard in Resources */,
+				2EDF31BB1E1CDD55003B52AB /* EmoticonViewCell.xib in Resources */,
 				2EB14FD11E026E7400DEBE2A /* Rank.storyboard in Resources */,
 				2EB14FB11E024D9100DEBE2A /* LaunchScreen.storyboard in Resources */,
 				2E23C1491E1371C7002A5514 /* HomeViewCell.xib in Resources */,
@@ -480,21 +516,25 @@
 				2E1B7A0F1E0D292D00505217 /* NSObject-Extension.swift in Sources */,
 				2E23C12F1E125C64002A5514 /* XWPageView.swift in Sources */,
 				2EB14FA71E024D9100DEBE2A /* AppDelegate.swift in Sources */,
+				2EDF31B71E1CD789003B52AB /* NibLoadable.swift in Sources */,
 				2EB14FCB1E026C1B00DEBE2A /* DiscoverViewController.swift in Sources */,
 				2E23C1451E129857002A5514 /* NetworkTool.swift in Sources */,
 				2EB14FD71E027B4500DEBE2A /* XWNavigationController.swift in Sources */,
 				2E23C1421E1296F9002A5514 /* HomeViewModel.swift in Sources */,
 				2EB14FCF1E026E2900DEBE2A /* ProfileViewController.swift in Sources */,
+				2EDF31BF1E1D08B9003B52AB /* EmoticonView.swift in Sources */,
 				2E1B7A261E0D2D0100505217 /* HomeViewController.swift in Sources */,
 				2E23C1301E125C64002A5514 /* XWTitleStyle.swift in Sources */,
 				2E1B7A311E0D389E00505217 /* AnchorViewController.swift in Sources */,
 				2E23C1311E125C64002A5514 /* XWTitleView.swift in Sources */,
 				2E1B79FC1E0D20DA00505217 /* BaseModel.swift in Sources */,
+				2EDF31BD1E1CDD6E003B52AB /* EmoticonViewCell.swift in Sources */,
 				2EB14FC11E02625C00DEBE2A /* MainViewController.swift in Sources */,
 				2EB14FD31E026F3900DEBE2A /* RanKViewController.swift in Sources */,
 				2E1B7A281E0D2D2400505217 /* HomeType.swift in Sources */,
 				2E23C12E1E125C64002A5514 /* XWContentView.swift in Sources */,
 				2E23C1481E1371C7002A5514 /* HomeViewCell.swift in Sources */,
+				2EDF31B41E1CD5AA003B52AB /* ChatToolsView.swift in Sources */,
 				2E1B7A121E0D294E00505217 /* Date_Extension.swift in Sources */,
 				2E23C12D1E125C64002A5514 /* UIColor_Extension.swift in Sources */,
 				2E1B79FE1E0D215700505217 /* Const.swift in Sources */,
@@ -545,6 +585,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -594,6 +635,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
