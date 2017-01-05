@@ -8,9 +8,12 @@
 
 import UIKit
 private let kChatToolViewHeight : CGFloat = 44.0
+private let kGiftlistViewHeight : CGFloat = kScreenH * 0.48
 class RoomViewController: UIViewController {
     @IBOutlet weak var bgImageView: UIImageView!
     fileprivate var chatToolView : ChatToolsView = ChatToolsView.loadViewFromNib()
+    fileprivate var giftListView : GiftListView = GiftListView.loadViewFromNib()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -35,6 +38,7 @@ extension RoomViewController {
     fileprivate func setUpUI() {
         setupBlurView()
         setupChatToolView()
+        setupGiftView()
     }
     /// 毛玻璃效果
     private func setupBlurView() {
@@ -46,10 +50,16 @@ extension RoomViewController {
     }
     /// 聊天窗口
     private func setupChatToolView() {
-        print("\(view.bounds)")
         chatToolView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kChatToolViewHeight)
         chatToolView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         view.addSubview(chatToolView)
+        chatToolView.delegate = self
+    }
+    /// 礼物视图
+    private func setupGiftView() {
+        giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftlistViewHeight)
+        giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        view.addSubview(giftListView)
     }
 }
 
@@ -58,6 +68,11 @@ extension RoomViewController {
 extension RoomViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         chatToolView.inputTextField.resignFirstResponder()
+        if giftListView.frame.origin.y != kScreenH {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.giftListView.frame.origin.y = kScreenH
+            })
+        }
     }
     @objc fileprivate func keyboardWillChangeFrame(_ noti : NSNotification) {
         let duration : Double = noti.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
@@ -82,6 +97,9 @@ extension RoomViewController {
             print("点击了分享")
         case 2:
             print("点击了礼物")
+            UIView.animate(withDuration: 0.25, animations: {
+                self.giftListView.frame.origin.y -= kGiftlistViewHeight
+            })
         case 3:
             print("点击了更多")
         case 4:
@@ -91,4 +109,10 @@ extension RoomViewController {
         }
     }
 
+}
+
+extension RoomViewController : ChatToolsViewDelegate{
+    func chatToosView(chatToolsView: ChatToolsView, message: String) {
+        print("发送内容: \(message)")
+    }
 }

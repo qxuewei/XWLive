@@ -12,6 +12,7 @@ private let kCollectionID : String = "kCollectionID"
 private let kCollectionCellMargin : CGFloat = 10.0
 
 class EmoticonView: UIView {
+    var emoticonClickBlock : ((Emoticon) -> Void)?
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpUI()
@@ -35,6 +36,7 @@ extension EmoticonView {
         let pageCollection : XWPageCollectionView = XWPageCollectionView(frame: bounds, titles: ["普通","粉丝专属"], style: style, isTitleInTop: false, layout: layout)
         addSubview(pageCollection)
         pageCollection.dataSource = self
+        pageCollection.delegate = self
         pageCollection.register(nib: UINib(nibName: "EmoticonViewCell", bundle: nil), forCellWithReuseIdentifier: kCollectionID)
     }
 }
@@ -50,5 +52,14 @@ extension EmoticonView : XWPageCollectionViewDataSource {
         let cell : EmoticonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionID, for: indexPath) as! EmoticonViewCell
         cell.emoticon = EmoticonViewModel.shareInstance.packages[indexPath.section].emoticons[indexPath.item]
         return cell
+    }
+}
+
+extension EmoticonView : XWPageCollectionViewDelegate {
+    func collectionView(_ collectionView: XWPageCollectionView, didSelectItemAt indexPath: IndexPath) {
+        let emoticon : Emoticon = EmoticonViewModel.shareInstance.packages[indexPath.section].emoticons[indexPath.item]
+        if let emoticonClickBlock = emoticonClickBlock {
+            emoticonClickBlock(emoticon)
+        }
     }
 }

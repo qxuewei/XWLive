@@ -25,7 +25,7 @@ class XWTitleStyle {
     
     
     /// 是否显示底部滚动条
-    var isShowBottomLine : Bool = false
+    var isShowBottomLine : Bool = true
     /// 底部滚动条的颜色
     var bottomLineColor : UIColor = UIColor.orange
     /// 底部滚动条的高度

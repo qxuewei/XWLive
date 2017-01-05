@@ -23,8 +23,8 @@ class ChatToolsView: UIView, Nibloadable {
     }
     
     @IBAction func textFieldDidEdit(_ sender: UITextField) {
-        sender.isEnabled = (inputTextField.text?.characters.count != 0)
-        print("textFieldDidEdit")
+        sendMsgBtn.isEnabled = (inputTextField.text?.characters.count != 0)
+        
     }
     
     @IBAction func sendBtnClick(_ sender: UIButton) {
@@ -41,6 +41,7 @@ class ChatToolsView: UIView, Nibloadable {
 
 }
 
+//MARK: - UI
 extension ChatToolsView {
     fileprivate func setUpUI() {
         emoticonBtn.setImage(UIImage(named: "chat_btn_emoji"), for: .normal)
@@ -48,14 +49,59 @@ extension ChatToolsView {
         emoticonBtn.addTarget(self, action: #selector(emoticonBtnClick(_:)), for: .touchUpInside)
         inputTextField.rightView = emoticonBtn
         inputTextField.rightViewMode = .always
+        weak var weakSelf = self
+        emoticonView.emoticonClickBlock = { emoticon -> Void in
+            weakSelf?.insertEmoticon(emoticon)
+        }
     }
 }
 
+//MARK: - Selector
 extension ChatToolsView {
     @objc func emoticonBtnClick(_ btn : UIButton) {
         btn.isSelected = !btn.isSelected
+        let currentTextRange : UITextRange = inputTextField.selectedTextRange!
         inputTextField.resignFirstResponder()
         inputTextField.inputView = (inputTextField.inputView == nil ? emoticonView : nil)
         inputTextField.becomeFirstResponder()
+        inputTextField.selectedTextRange = currentTextRange
+    }
+    /// 插入表情(文字)
+    fileprivate func insertEmoticon(_ emoticon : Emoticon) {
+        if emoticon.emoticonName == "delete-n" {
+            self.inputTextField.deleteBackward()
+            return
+        }
+        guard let inputTextRange = inputTextField.selectedTextRange else {
+            return
+        }
+        inputTextField.replace(inputTextRange, withText: emoticon.emoticonName)
+    }
+    /// 插入表情(富文本) -> UITextField 无法富文本
+//    fileprivate func insertEmoticon(_ emoticon : Emoticon) {
+//        if emoticon.emoticonName == "delete-n" {
+//            self.inputTextField.deleteBackward()
+//            return
+//        }
+//        guard let inputTextRange : UITextRange = inputTextField.selectedTextRange else {
+//            return
+//        }
+//        guard let emoticonImage = UIImage(named: emoticon.emoticonName) else {
+//            return
+//        }
+//        let attachment : NSTextAttachment = NSTextAttachment()
+//        attachment.image = emoticonImage
+//        inputTextField.attributedText = NSAttributedString(attachment: attachment)
+//    }
+    
+    ///  UITextRange -> NSRange
+    func selectedRange(_ textField : UITextField) -> NSRange {
+        let beginning : UITextPosition = textField.beginningOfDocument
+        let selectedTextRange : UITextRange = textField.selectedTextRange!
+        let selectedStart : UITextPosition = selectedTextRange.start
+        let selectedEnd : UITextPosition = selectedTextRange.end
+        let location : NSInteger = textField.offset(from: beginning, to: selectedStart)
+        let length : NSInteger = textField.offset(from: selectedStart, to: selectedEnd)
+        return NSRange(location: location, length: length)
     }
 }

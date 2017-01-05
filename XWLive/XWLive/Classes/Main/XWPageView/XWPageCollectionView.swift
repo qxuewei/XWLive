@@ -14,9 +14,14 @@ protocol XWPageCollectionViewDataSource : class {
     func collectionView(_ pageCollection : XWPageCollectionView, _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
 }
 
+protocol XWPageCollectionViewDelegate : class {
+    func collectionView(_ collectionView: XWPageCollectionView, didSelectItemAt indexPath: IndexPath) -> Void
+}
+
 class XWPageCollectionView: UIView {
     
     weak var dataSource : XWPageCollectionViewDataSource?
+    weak var delegate : XWPageCollectionViewDelegate?
     
     fileprivate var isTitleInTop : Bool
     fileprivate var style : XWTitleStyle
@@ -58,15 +63,8 @@ extension XWPageCollectionView {
         titleView = XWTitleView(frame: titleViewFrame, titles: titles, style: style)
         titleView.delegate = self
         addSubview(titleView)
-
-        //创建UIPageControl
+        
         let pageControlH : CGFloat = 20
-        let pageControlY : CGFloat = isTitleInTop ? (bounds.height - pageControlH) : (bounds.height - pageControlH - style.titleHeight)
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlH))
-        pageControl.isEnabled = false
-        pageControl.numberOfPages = 4
-        addSubview(pageControl)
-        pageControl.backgroundColor = UIColor.getRandomColor()
         
         //创建UICollectionView
         let collectionViewY = isTitleInTop ? style.titleHeight : 0
@@ -76,6 +74,15 @@ extension XWPageCollectionView {
         collectionView.dataSource = self
         collectionView.delegate = self
         addSubview(collectionView)
+        
+        //创建UIPageControl
+        let pageControlY : CGFloat = isTitleInTop ? (bounds.height - pageControlH) : (bounds.height - pageControlH - style.titleHeight)
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: pageControlY, width: bounds.width, height: pageControlH))
+        pageControl.isEnabled = false
+        pageControl.numberOfPages = 4
+        addSubview(pageControl)
+        pageControl.backgroundColor = collectionView.backgroundColor
+        //        pageControl.backgroundColor = UIColor.getRandomColor()
     }
 }
 
@@ -96,6 +103,9 @@ extension XWPageCollectionView : UICollectionViewDataSource{
 }
 
 extension XWPageCollectionView : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.collectionView(self, didSelectItemAt: indexPath)
+    }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollViewEndScroll()
     }
@@ -115,6 +125,8 @@ extension XWPageCollectionView : UICollectionViewDelegate {
         }
         pageControl.currentPage = indexPathInPage.item / (layout.cols * layout.rows)
     }
+    
+    
 }
 
 extension XWPageCollectionView : XWTitleViewDelegate {

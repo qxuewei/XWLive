@@ -30,6 +30,13 @@
 		2E7C20D81E1DFE56004E9F83 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C20D61E1DFE56004E9F83 /* QHNormalEmotionSort.plist */; };
 		2E7C20D91E1DFE56004E9F83 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C20D71E1DFE56004E9F83 /* QHSohuGifSort.plist */; };
 		2E7C20DC1E1DFFF6004E9F83 /* EmoticonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20DB1E1DFFF6004E9F83 /* EmoticonViewModel.swift */; };
+		2E7C20E11E1E5191004E9F83 /* GiftListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C20E01E1E5191004E9F83 /* GiftListView.xib */; };
+		2E7C20E31E1E51A2004E9F83 /* GiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20E21E1E51A2004E9F83 /* GiftListView.swift */; };
+		2E7C20E51E1E5795004E9F83 /* GiftViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C20E41E1E5795004E9F83 /* GiftViewCell.xib */; };
+		2E7C20E71E1E57B2004E9F83 /* GiftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20E61E1E57B2004E9F83 /* GiftViewCell.swift */; };
+		2E7C20E91E1E9565004E9F83 /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20E81E1E9565004E9F83 /* GiftModel.swift */; };
+		2E7C20EB1E1E9577004E9F83 /* GiftPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20EA1E1E9577004E9F83 /* GiftPackage.swift */; };
+		2E7C20ED1E1E9764004E9F83 /* GiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20EC1E1E9764004E9F83 /* GiftViewModel.swift */; };
 		2EB14FA71E024D9100DEBE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FA61E024D9100DEBE2A /* AppDelegate.swift */; };
 		2EB14FAC1E024D9100DEBE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB14FAA1E024D9100DEBE2A /* Main.storyboard */; };
 		2EB14FAE1E024D9100DEBE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EB14FAD1E024D9100DEBE2A /* Assets.xcassets */; };
@@ -83,6 +90,13 @@
 		2E7C20D61E1DFE56004E9F83 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
 		2E7C20D71E1DFE56004E9F83 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
 		2E7C20DB1E1DFFF6004E9F83 /* EmoticonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewModel.swift; sourceTree = "<group>"; };
+		2E7C20E01E1E5191004E9F83 /* GiftListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftListView.xib; sourceTree = "<group>"; };
+		2E7C20E21E1E51A2004E9F83 /* GiftListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftListView.swift; sourceTree = "<group>"; };
+		2E7C20E41E1E5795004E9F83 /* GiftViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewCell.xib; sourceTree = "<group>"; };
+		2E7C20E61E1E57B2004E9F83 /* GiftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewCell.swift; sourceTree = "<group>"; };
+		2E7C20E81E1E9565004E9F83 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		2E7C20EA1E1E9577004E9F83 /* GiftPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftPackage.swift; sourceTree = "<group>"; };
+		2E7C20EC1E1E9764004E9F83 /* GiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewModel.swift; sourceTree = "<group>"; };
 		2EB14FA31E024D9100DEBE2A /* XWLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB14FA61E024D9100DEBE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EB14FAB1E024D9100DEBE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +194,8 @@
 				2E7C20D71E1DFE56004E9F83 /* QHSohuGifSort.plist */,
 				2E7C20D21E1DFBE9004E9F83 /* Emoticon.swift */,
 				2E7C20D41E1DFC79004E9F83 /* EmoticonPackage.swift */,
+				2E7C20E81E1E9565004E9F83 /* GiftModel.swift */,
+				2E7C20EA1E1E9577004E9F83 /* GiftPackage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +203,7 @@
 		2E1B7A1A1E0D2A3400505217 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E7C20DD1E1E512D004E9F83 /* GiftView */,
 				2EDF31B01E1CCEE7003B52AB /* ChatView */,
 			);
 			path = View;
@@ -249,8 +266,20 @@
 			isa = PBXGroup;
 			children = (
 				2E7C20DB1E1DFFF6004E9F83 /* EmoticonViewModel.swift */,
+				2E7C20EC1E1E9764004E9F83 /* GiftViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E7C20DD1E1E512D004E9F83 /* GiftView */ = {
+			isa = PBXGroup;
+			children = (
+				2E7C20E01E1E5191004E9F83 /* GiftListView.xib */,
+				2E7C20E21E1E51A2004E9F83 /* GiftListView.swift */,
+				2E7C20E41E1E5795004E9F83 /* GiftViewCell.xib */,
+				2E7C20E61E1E57B2004E9F83 /* GiftViewCell.swift */,
+			);
+			path = GiftView;
 			sourceTree = "<group>";
 		};
 		2EB14F9A1E024D9100DEBE2A = {
@@ -478,6 +507,8 @@
 				2E7C20D81E1DFE56004E9F83 /* QHNormalEmotionSort.plist in Resources */,
 				2EB14FD11E026E7400DEBE2A /* Rank.storyboard in Resources */,
 				2EB14FB11E024D9100DEBE2A /* LaunchScreen.storyboard in Resources */,
+				2E7C20E51E1E5795004E9F83 /* GiftViewCell.xib in Resources */,
+				2E7C20E11E1E5191004E9F83 /* GiftListView.xib in Resources */,
 				2E23C1491E1371C7002A5514 /* HomeViewCell.xib in Resources */,
 				2E1B7A2D1E0D2DB900505217 /* types.plist in Resources */,
 				2E1B7A1C1E0D2A6300505217 /* RoomViewController.xib in Resources */,
@@ -562,10 +593,12 @@
 				2E1B7A311E0D389E00505217 /* AnchorViewController.swift in Sources */,
 				2E1B79FC1E0D20DA00505217 /* BaseModel.swift in Sources */,
 				2EDF31BD1E1CDD6E003B52AB /* EmoticonViewCell.swift in Sources */,
+				2E7C20E71E1E57B2004E9F83 /* GiftViewCell.swift in Sources */,
 				2EB14FC11E02625C00DEBE2A /* MainViewController.swift in Sources */,
 				2EB14FD31E026F3900DEBE2A /* RanKViewController.swift in Sources */,
 				2E7C20D51E1DFC79004E9F83 /* EmoticonPackage.swift in Sources */,
 				2E1B7A281E0D2D2400505217 /* HomeType.swift in Sources */,
+				2E7C20E31E1E51A2004E9F83 /* GiftListView.swift in Sources */,
 				2E23C1481E1371C7002A5514 /* HomeViewCell.swift in Sources */,
 				2EDF31CE1E1D23E0003B52AB /* XWTitleView.swift in Sources */,
 				2EDF31B41E1CD5AA003B52AB /* ChatToolsView.swift in Sources */,
@@ -574,7 +607,10 @@
 				2EDF31CC1E1D23E0003B52AB /* XWPageView.swift in Sources */,
 				2E1B79FE1E0D215700505217 /* Const.swift in Sources */,
 				2E1B7A2A1E0D2D5900505217 /* AnchorModel.swift in Sources */,
+				2E7C20ED1E1E9764004E9F83 /* GiftViewModel.swift in Sources */,
+				2E7C20E91E1E9565004E9F83 /* GiftModel.swift in Sources */,
 				2E23C1401E127B8D002A5514 /* XWWaterFallLayout.swift in Sources */,
+				2E7C20EB1E1E9577004E9F83 /* GiftPackage.swift in Sources */,
 				2EDF31CD1E1D23E0003B52AB /* XWTitleStyle.swift in Sources */,
 				2E1B7A1E1E0D2A7C00505217 /* RoomViewController.swift in Sources */,
 				2E1B7A101E0D292D00505217 /* UITextField-Extension.swift in Sources */,
