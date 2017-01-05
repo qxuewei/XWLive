@@ -13,6 +13,7 @@ protocol ChatToolsViewDelegate : class {
 class ChatToolsView: UIView, Nibloadable {
     weak var delegate : ChatToolsViewDelegate?
     fileprivate lazy var emoticonBtn : UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+    fileprivate lazy var emoticonView : EmoticonView = EmoticonView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 240))
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var sendMsgBtn: UIButton!
     
@@ -54,7 +55,7 @@ extension ChatToolsView {
     @objc func emoticonBtnClick(_ btn : UIButton) {
         btn.isSelected = !btn.isSelected
         inputTextField.resignFirstResponder()
-        inputTextField.inputView = (inputTextField.inputView == nil ? UISwitch() : nil)
+        inputTextField.inputView = (inputTextField.inputView == nil ? emoticonView : nil)
         inputTextField.becomeFirstResponder()
     }
 }

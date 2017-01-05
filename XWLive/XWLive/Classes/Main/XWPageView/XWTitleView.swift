@@ -98,6 +98,7 @@ extension XWTitleView {
         if style.isShowCover {
             setupCoverView()
         }
+        
     }
     
     fileprivate func setupTitleLabels() {

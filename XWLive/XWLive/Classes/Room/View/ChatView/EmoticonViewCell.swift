@@ -10,10 +10,10 @@ import UIKit
 
 class EmoticonViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
-    
-//    var emoticon : Emoticon? {
-//        didSet {
-//            iconImageView.image = UIImage(named: emoticon!.emoticonName)
-//        }
-//    }
+    var emoticon : Emoticon? {
+        didSet {
+            guard let image = UIImage(named: (emoticon?.emoticonName)!) else { return }
+            iconImageView.image = image// UIImage(named: emoticon!.emoticonName)
+        }
+    }
 }
