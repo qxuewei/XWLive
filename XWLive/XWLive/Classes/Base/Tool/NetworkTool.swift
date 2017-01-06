@@ -18,7 +18,7 @@ class NetworkTool {
         //1.获取类型
         let method = (requestType == .get ? HTTPMethod.get : HTTPMethod.post)
         //2.发送网络请求
-        Alamofire.request(URLString, method: method, parameters: parameters).validate(contentType: ["text/plain"]).responseJSON { (response) in
+        Alamofire.request(URLString, method: method, parameters: parameters).validate(contentType: ["text/plain","application/json"]).responseJSON { (response) in
             //3.获取结果
             guard let result = response.result.value else {
                 print("请求失败\(response.result.error!)")

@@ -60,6 +60,7 @@ extension RoomViewController {
         giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftlistViewHeight)
         giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         view.addSubview(giftListView)
+        giftListView.delegate = self
     }
 }
 
@@ -96,7 +97,6 @@ extension RoomViewController {
         case 1:
             print("点击了分享")
         case 2:
-            print("点击了礼物")
             UIView.animate(withDuration: 0.25, animations: {
                 self.giftListView.frame.origin.y -= kGiftlistViewHeight
             })
@@ -114,5 +114,16 @@ extension RoomViewController {
 extension RoomViewController : ChatToolsViewDelegate{
     func chatToosView(chatToolsView: ChatToolsView, message: String) {
         print("发送内容: \(message)")
+    }
+}
+
+extension RoomViewController : GiftListViewDelegate {
+    func giftListView(_ giftListView: GiftListView, giftModel: GiftModel) {
+        print("送礼物:\(giftModel.subject)")
+        if giftListView.frame.origin.y != kScreenH {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.giftListView.frame.origin.y = kScreenH
+            })
+        }
     }
 }

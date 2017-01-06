@@ -7,18 +7,29 @@
 //
 
 import UIKit
+
+protocol GiftListViewDelegate : class {
+    func giftListView(_ giftListView : GiftListView, giftModel : GiftModel)
+}
+
 fileprivate let kPageCollectionCellMargin : CGFloat = 10.0
 fileprivate let kPageCollectionCellID : String = "kPageCollectionCellID"
 class GiftListView: UIView, Nibloadable {
+    
+    weak var delegate : GiftListViewDelegate?
+    
     // MARK: 控件属性
     @IBOutlet weak var giftView: UIView!
     @IBOutlet weak var sendGiftBtn: UIButton!
     
     fileprivate var pageCollectionView : XWPageCollectionView!
+    fileprivate var giftViewModel : GiftViewModel = GiftViewModel()
+    fileprivate var currentIndexPath : IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupGiftView()
+        loadGiftData()
     }
     private func setupGiftView() {
         let titles : [String] = ["热门", "高级", "豪华", "专属"]
@@ -36,22 +47,51 @@ class GiftListView: UIView, Nibloadable {
         pageCollectionView = XWPageCollectionView(frame: giftView.bounds, titles: titles, style: style, isTitleInTop: true, layout: layout)
         pageCollectionView.backgroundColor = UIColor.lightGray
         giftView.addSubview(pageCollectionView)
-        
+        pageCollectionView.delegate = self
         pageCollectionView.dataSource = self
-        pageCollectionView.register(cellClass: UICollectionViewCell.self, forCellWithReuseIdentifier: kPageCollectionCellID)
+        pageCollectionView.register(nib: UINib(nibName: "GiftViewCell", bundle: nil), forCellWithReuseIdentifier: kPageCollectionCellID)
     }
 }
 
-extension GiftListView : XWPageCollectionViewDataSource {
+/// 网络请求数据
+extension GiftListView {
+    fileprivate func loadGiftData() {
+        giftViewModel.loadGiftData {
+            self.pageCollectionView.reloadData()
+        }
+    }
+}
+
+extension GiftListView : XWPageCollectionViewDataSource,XWPageCollectionViewDelegate {
     func numberOfSections(in collectionView: XWPageCollectionView) -> Int {
-        return 4
+        return giftViewModel.giftlistData.count
     }
     func collectionView(_ collectionView: XWPageCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        let package = giftViewModel.giftlistData[section]
+        return package.list.count
     }
     func collectionView(_ pageCollection: XWPageCollectionView, _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPageCollectionCellID, for: indexPath)
-        cell.backgroundColor = UIColor.getRandomColor()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPageCollectionCellID, for: indexPath) as! GiftViewCell
+        let package = giftViewModel.giftlistData[indexPath.section]
+        let giftModel : GiftModel = package.list[indexPath.item]
+        cell.giftModel = giftModel
         return cell
+    }
+    func collectionView(_ collectionView: XWPageCollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentIndexPath = indexPath
+        sendGiftBtn.isEnabled = true
+    }
+}
+
+// MARK:- 送礼物
+extension GiftListView {
+    @IBAction func sendGiftBtnClick() {
+        guard let currentIndexPath = currentIndexPath else {
+            sendGiftBtn.isEnabled = false
+            return
+        }
+        let package : GiftPackage = giftViewModel.giftlistData[currentIndexPath.section]
+        let giftModel : GiftModel = package.list[currentIndexPath.item]
+        delegate?.giftListView(self, giftModel: giftModel)
     }
 }

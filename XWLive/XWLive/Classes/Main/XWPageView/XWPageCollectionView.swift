@@ -53,6 +53,9 @@ extension XWPageCollectionView {
     func register(nib: UINib?, forCellWithReuseIdentifier: String) {
         collectionView.register(nib, forCellWithReuseIdentifier: forCellWithReuseIdentifier)
     }
+    func reloadData() {
+        collectionView.reloadData()
+    }
 }
 
 extension XWPageCollectionView {
