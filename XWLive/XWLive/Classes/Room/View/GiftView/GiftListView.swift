@@ -43,8 +43,9 @@ class GiftListView: UIView, Nibloadable {
         layout.minimumInteritemSpacing = kPageCollectionCellMargin
         layout.cols = 4
         layout.rows = 2
-        
-        pageCollectionView = XWPageCollectionView(frame: giftView.bounds, titles: titles, style: style, isTitleInTop: true, layout: layout)
+        var giftViewFrame : CGRect = giftView.bounds
+        giftViewFrame.size.width = kScreenW
+        pageCollectionView = XWPageCollectionView(frame: giftViewFrame, titles: titles, style: style, isTitleInTop: true, layout: layout)
         pageCollectionView.backgroundColor = UIColor.lightGray
         giftView.addSubview(pageCollectionView)
         pageCollectionView.delegate = self
@@ -92,6 +93,6 @@ extension GiftListView {
         }
         let package : GiftPackage = giftViewModel.giftlistData[currentIndexPath.section]
         let giftModel : GiftModel = package.list[currentIndexPath.item]
-        delegate?.giftListView(self, giftModel: giftModel)
+        delegate?.giftListView(self, giftModel: giftModel) 
     }
 }
