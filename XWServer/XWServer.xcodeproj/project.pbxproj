@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E037EB21E2858F700D5D515 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E037EB11E2858F700D5D515 /* ClientManager.swift */; };
 		2E6892D71E1FA55B00848AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6892D61E1FA55B00848AAE /* AppDelegate.swift */; };
 		2E6892D91E1FA55B00848AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6892D81E1FA55B00848AAE /* ViewController.swift */; };
 		2E6892DB1E1FA55B00848AAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E6892DA1E1FA55B00848AAE /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E037EB11E2858F700D5D515 /* ClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
 		2E6892D31E1FA55B00848AAE /* XWServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6892D61E1FA55B00848AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E6892D81E1FA55B00848AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				2E6892E91E206B6300848AAE /* ysocket */,
 				2E6892E71E20677A00848AAE /* ServerManager.swift */,
+				2E037EB11E2858F700D5D515 /* ClientManager.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				2E6892F01E206B6300848AAE /* ytcpsocket.c in Sources */,
 				2E6892F31E206B6300848AAE /* yudpsocket.swift in Sources */,
 				2E6892F21E206B6300848AAE /* yudpsocket.c in Sources */,
+				2E037EB21E2858F700D5D515 /* ClientManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +333,7 @@
 				2E6892E41E1FA55B00848AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
