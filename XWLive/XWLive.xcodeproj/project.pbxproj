@@ -37,6 +37,11 @@
 		2E7C20E31E1E51A2004E9F83 /* GiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20E21E1E51A2004E9F83 /* GiftListView.swift */; };
 		2E7C20E51E1E5795004E9F83 /* GiftViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C20E41E1E5795004E9F83 /* GiftViewCell.xib */; };
 		2E7C20E71E1E57B2004E9F83 /* GiftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C20E61E1E57B2004E9F83 /* GiftViewCell.swift */; };
+		2EB0F7431E7D7B5300B2FC6F /* Emitterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB0F7421E7D7B5300B2FC6F /* Emitterable.swift */; };
+		2EB0F7461E7F7CA700B2FC6F /* ChatContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB0F7451E7F7CA700B2FC6F /* ChatContentView.swift */; };
+		2EB0F7481E7F7CAF00B2FC6F /* ChatContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB0F7471E7F7CAF00B2FC6F /* ChatContentView.xib */; };
+		2EB0F74F1E7F7E4600B2FC6F /* ChatContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB0F74D1E7F7E4600B2FC6F /* ChatContentCell.swift */; };
+		2EB0F7501E7F7E4600B2FC6F /* ChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB0F74E1E7F7E4600B2FC6F /* ChatContentCell.xib */; };
 		2EB14FA71E024D9100DEBE2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB14FA61E024D9100DEBE2A /* AppDelegate.swift */; };
 		2EB14FAC1E024D9100DEBE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB14FAA1E024D9100DEBE2A /* Main.storyboard */; };
 		2EB14FAE1E024D9100DEBE2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EB14FAD1E024D9100DEBE2A /* Assets.xcassets */; };
@@ -97,6 +102,11 @@
 		2E7C20E21E1E51A2004E9F83 /* GiftListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftListView.swift; sourceTree = "<group>"; };
 		2E7C20E41E1E5795004E9F83 /* GiftViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewCell.xib; sourceTree = "<group>"; };
 		2E7C20E61E1E57B2004E9F83 /* GiftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewCell.swift; sourceTree = "<group>"; };
+		2EB0F7421E7D7B5300B2FC6F /* Emitterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emitterable.swift; sourceTree = "<group>"; };
+		2EB0F7451E7F7CA700B2FC6F /* ChatContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatContentView.swift; sourceTree = "<group>"; };
+		2EB0F7471E7F7CAF00B2FC6F /* ChatContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatContentView.xib; sourceTree = "<group>"; };
+		2EB0F74D1E7F7E4600B2FC6F /* ChatContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatContentCell.swift; sourceTree = "<group>"; };
+		2EB0F74E1E7F7E4600B2FC6F /* ChatContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatContentCell.xib; sourceTree = "<group>"; };
 		2EB14FA31E024D9100DEBE2A /* XWLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB14FA61E024D9100DEBE2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EB14FAB1E024D9100DEBE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +213,7 @@
 		2E1B7A1A1E0D2A3400505217 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2EB0F7441E7F7C9A00B2FC6F /* ChatContentView */,
 				2E7C20DD1E1E512D004E9F83 /* GiftView */,
 				2EDF31B01E1CCEE7003B52AB /* ChatView */,
 			);
@@ -280,6 +291,17 @@
 				2E7C20E61E1E57B2004E9F83 /* GiftViewCell.swift */,
 			);
 			path = GiftView;
+			sourceTree = "<group>";
+		};
+		2EB0F7441E7F7C9A00B2FC6F /* ChatContentView */ = {
+			isa = PBXGroup;
+			children = (
+				2EB0F7451E7F7CA700B2FC6F /* ChatContentView.swift */,
+				2EB0F7471E7F7CAF00B2FC6F /* ChatContentView.xib */,
+				2EB0F74D1E7F7E4600B2FC6F /* ChatContentCell.swift */,
+				2EB0F74E1E7F7E4600B2FC6F /* ChatContentCell.xib */,
+			);
+			path = ChatContentView;
 			sourceTree = "<group>";
 		};
 		2EB14F9A1E024D9100DEBE2A = {
@@ -411,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDF31B61E1CD789003B52AB /* NibLoadable.swift */,
+				2EB0F7421E7D7B5300B2FC6F /* Emitterable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -503,6 +526,7 @@
 			files = (
 				2EDF31B21E1CD59D003B52AB /* ChatToolsView.xib in Resources */,
 				2EB14FCD1E026D2600DEBE2A /* Profile.storyboard in Resources */,
+				2EB0F7481E7F7CAF00B2FC6F /* ChatContentView.xib in Resources */,
 				2EDF31BB1E1CDD55003B52AB /* EmoticonViewCell.xib in Resources */,
 				2E7C20D81E1DFE56004E9F83 /* QHNormalEmotionSort.plist in Resources */,
 				2EB14FD11E026E7400DEBE2A /* Rank.storyboard in Resources */,
@@ -517,6 +541,7 @@
 				2EB14FC91E026AF300DEBE2A /* Discover.storyboard in Resources */,
 				2EB14FAC1E024D9100DEBE2A /* Main.storyboard in Resources */,
 				2E1B7A251E0D2D0100505217 /* Home.storyboard in Resources */,
+				2EB0F7501E7F7E4600B2FC6F /* ChatContentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +590,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -584,6 +609,7 @@
 				2E23C1451E129857002A5514 /* NetworkTool.swift in Sources */,
 				2E7C20D31E1DFBE9004E9F83 /* Emoticon.swift in Sources */,
 				2EB14FD71E027B4500DEBE2A /* XWNavigationController.swift in Sources */,
+				2EB0F74F1E7F7E4600B2FC6F /* ChatContentCell.swift in Sources */,
 				2EDF31CB1E1D23E0003B52AB /* XWPageCollectionView.swift in Sources */,
 				2E23C1421E1296F9002A5514 /* HomeViewModel.swift in Sources */,
 				2EB14FCF1E026E2900DEBE2A /* ProfileViewController.swift in Sources */,
@@ -601,6 +627,7 @@
 				2E7C20E31E1E51A2004E9F83 /* GiftListView.swift in Sources */,
 				2E23C1481E1371C7002A5514 /* HomeViewCell.swift in Sources */,
 				2EDF31CE1E1D23E0003B52AB /* XWTitleView.swift in Sources */,
+				2EB0F7431E7D7B5300B2FC6F /* Emitterable.swift in Sources */,
 				2EDF31B41E1CD5AA003B52AB /* ChatToolsView.swift in Sources */,
 				2E1B7A121E0D294E00505217 /* Date_Extension.swift in Sources */,
 				2E6892C21E1F4DFB00848AAE /* EmoticonViewModel.swift in Sources */,
@@ -610,6 +637,7 @@
 				2E6892C91E1F747B00848AAE /* GiftViewModel.swift in Sources */,
 				2E6892C51E1F515C00848AAE /* GiftModel.swift in Sources */,
 				2E23C1401E127B8D002A5514 /* XWWaterFallLayout.swift in Sources */,
+				2EB0F7461E7F7CA700B2FC6F /* ChatContentView.swift in Sources */,
 				2E6892C71E1F703500848AAE /* GiftPackage.swift in Sources */,
 				2EDF31CD1E1D23E0003B52AB /* XWTitleStyle.swift in Sources */,
 				2E1B7A1E1E0D2A7C00505217 /* RoomViewController.swift in Sources */,
