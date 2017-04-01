@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="XWLiveGiftAnimSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dm-Px-Z7W">
+                                <rect key="frame" x="35" y="571" width="70" height="30"/>
+                                <state key="normal" title="礼物一"/>
+                                <connections>
+                                    <action selector="gift1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ux9-Oz-X6s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgS-jC-kDO">
+                                <rect key="frame" x="153" y="571" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5ku-7M-s6q"/>
+                                    <constraint firstAttribute="width" constant="70" id="Sbg-rg-3ca"/>
+                                </constraints>
+                                <state key="normal" title="礼物二"/>
+                                <connections>
+                                    <action selector="gift2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jkC-eZ-9Ho"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqb-UH-jU3">
+                                <rect key="frame" x="271" y="571" width="70" height="30"/>
+                                <state key="normal" title="礼物三"/>
+                                <connections>
+                                    <action selector="gift3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="liU-NB-fKQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5k-XC-wYn" customClass="XWGiftDigitLabel" customModule="XWLiveGiftAnimSwift" customModuleProvider="target">
+                                <rect key="frame" x="165.5" y="318.5" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Kpt-V7-On2"/>
+                                    <constraint firstAttribute="width" constant="44" id="MTT-D0-zLR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xgS-jC-kDO" firstAttribute="width" secondItem="4Dm-Px-Z7W" secondAttribute="width" id="6SR-Az-JrI"/>
+                            <constraint firstItem="hqb-UH-jU3" firstAttribute="height" secondItem="4Dm-Px-Z7W" secondAttribute="height" id="7gp-eQ-HI9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xgS-jC-kDO" secondAttribute="bottom" constant="66" id="GQD-sQ-PbF"/>
+                            <constraint firstItem="xgS-jC-kDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PDW-gy-ERv"/>
+                            <constraint firstItem="xgS-jC-kDO" firstAttribute="height" secondItem="4Dm-Px-Z7W" secondAttribute="height" id="UQE-Qw-HOO"/>
+                            <constraint firstItem="xgS-jC-kDO" firstAttribute="leading" secondItem="4Dm-Px-Z7W" secondAttribute="trailing" constant="48" id="WPa-FR-uCV"/>
+                            <constraint firstItem="hqb-UH-jU3" firstAttribute="centerY" secondItem="4Dm-Px-Z7W" secondAttribute="centerY" id="XOr-9F-bO2"/>
+                            <constraint firstItem="D5k-XC-wYn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z03-Kh-3z2"/>
+                            <constraint firstItem="hqb-UH-jU3" firstAttribute="leading" secondItem="xgS-jC-kDO" secondAttribute="trailing" constant="48" id="amc-Ga-lt1"/>
+                            <constraint firstItem="hqb-UH-jU3" firstAttribute="width" secondItem="4Dm-Px-Z7W" secondAttribute="width" id="ar4-8e-NLn"/>
+                            <constraint firstItem="D5k-XC-wYn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e0O-ca-trw"/>
+                            <constraint firstItem="xgS-jC-kDO" firstAttribute="centerY" secondItem="4Dm-Px-Z7W" secondAttribute="centerY" id="zX0-vU-0cv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="digitLabel" destination="D5k-XC-wYn" id="LBy-5u-iH4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>

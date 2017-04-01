@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="d16-Hm-47H" customClass="HYGiftChannelView" customModule="_4_礼物动画展示" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-bl-Ty7" userLabel="背景">
+                    <rect key="frame" x="0.0" y="0.0" width="196.5" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJO-h4-693" customClass="HYGiftDigitLabel" customModule="_4_礼物动画展示" customModuleProvider="target">
+                    <rect key="frame" x="211.5" y="0.0" width="37.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzk-As-YrR" userLabel="头像">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nzk-As-YrR" secondAttribute="height" multiplier="1:1" id="t0e-2p-YQX"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coderwhy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-Ex-z0Y">
+                    <rect key="frame" x="54" y="5" width="51.5" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="送出礼物【飞机】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-0t-Edb">
+                    <rect key="frame" x="54" y="27.5" width="98.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YqA-2b-q1y" userLabel="礼物">
+                    <rect key="frame" x="152.5" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YqA-2b-q1y" secondAttribute="height" multiplier="1:1" id="zmP-ds-fe9"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QJO-h4-693" firstAttribute="top" secondItem="d16-Hm-47H" secondAttribute="top" id="CCD-Li-aGl"/>
+                <constraint firstItem="eQa-Ex-z0Y" firstAttribute="top" secondItem="d16-Hm-47H" secondAttribute="top" constant="5" id="Exl-Jz-Ced"/>
+                <constraint firstItem="YqA-2b-q1y" firstAttribute="top" secondItem="d16-Hm-47H" secondAttribute="top" id="FrM-7u-k0J"/>
+                <constraint firstAttribute="bottom" secondItem="6FS-bl-Ty7" secondAttribute="bottom" id="NB7-2H-mDK"/>
+                <constraint firstItem="YqA-2b-q1y" firstAttribute="leading" secondItem="xQ0-0t-Edb" secondAttribute="trailing" id="NHi-Ua-jWi"/>
+                <constraint firstItem="QJO-h4-693" firstAttribute="leading" secondItem="6FS-bl-Ty7" secondAttribute="trailing" constant="15" id="OBd-NO-stB"/>
+                <constraint firstAttribute="bottom" secondItem="nzk-As-YrR" secondAttribute="bottom" id="Pqa-KO-4TV"/>
+                <constraint firstItem="eQa-Ex-z0Y" firstAttribute="leading" secondItem="nzk-As-YrR" secondAttribute="trailing" constant="10" id="Ptv-pP-8gt"/>
+                <constraint firstItem="6FS-bl-Ty7" firstAttribute="leading" secondItem="d16-Hm-47H" secondAttribute="leading" id="TMG-6f-apd"/>
+                <constraint firstItem="nzk-As-YrR" firstAttribute="leading" secondItem="d16-Hm-47H" secondAttribute="leading" id="hCK-s1-SIf"/>
+                <constraint firstItem="QJO-h4-693" firstAttribute="leading" secondItem="YqA-2b-q1y" secondAttribute="trailing" constant="15" id="icQ-Bs-FpA"/>
+                <constraint firstAttribute="bottom" secondItem="xQ0-0t-Edb" secondAttribute="bottom" constant="2" id="ict-Ab-uVj"/>
+                <constraint firstItem="xQ0-0t-Edb" firstAttribute="leading" secondItem="nzk-As-YrR" secondAttribute="trailing" constant="10" id="oPU-q7-bdI"/>
+                <constraint firstItem="nzk-As-YrR" firstAttribute="top" secondItem="d16-Hm-47H" secondAttribute="top" id="q6C-UB-xfp"/>
+                <constraint firstItem="6FS-bl-Ty7" firstAttribute="top" secondItem="d16-Hm-47H" secondAttribute="top" id="wBF-NE-EIX"/>
+                <constraint firstAttribute="bottom" secondItem="YqA-2b-q1y" secondAttribute="bottom" id="yBt-tW-Oee"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgView" destination="6FS-bl-Ty7" id="Ent-Ic-JDt"/>
+                <outlet property="digitLabel" destination="QJO-h4-693" id="8US-1f-00f"/>
+                <outlet property="giftDescLabel" destination="xQ0-0t-Edb" id="Eep-wd-DaM"/>
+                <outlet property="giftImageView" destination="YqA-2b-q1y" id="UgV-8s-z6G"/>
+                <outlet property="iconImageView" destination="nzk-As-YrR" id="Caj-zW-S7h"/>
+                <outlet property="senderLabel" destination="eQa-Ex-z0Y" id="lpv-7Y-1uo"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="136"/>
+        </view>
+    </objects>
+</document>
