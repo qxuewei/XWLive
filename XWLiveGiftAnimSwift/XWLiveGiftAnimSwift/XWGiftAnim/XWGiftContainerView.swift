@@ -12,3 +12,9 @@ class XWGiftContainerView: UIView {
 
     
 }
+
+extension XWGiftChannelView {
+    func showGiftModel(_ giftModel : XWGiftModel) {
+        
+    }
+}

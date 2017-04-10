@@ -21,16 +21,16 @@ class XWGiftModel: NSObject {
         self.giftURL = giftURL
     }
     
-    override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? XWGiftModel else {
-            return false
-        }
-        
-        guard object.giftName == giftName && object.senderName == senderName else {
-            return false
-        }
-        
-        return true
-    }
+//    override func isEqual(_ object: Any?) -> Bool {
+//        guard let object = object as? XWGiftModel else {
+//            return false
+//        }
+//        
+//        guard object.giftName == giftName && object.senderName == senderName else {
+//            return false
+//        }
+//        
+//        return true
+//    }
 
 }
