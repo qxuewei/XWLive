@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var digitLabel: XWGiftDigitLabel!
+    
+    fileprivate lazy var giftContainerView : XWGiftContainerView = XWGiftContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +24,17 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func gift1(_ sender: UIButton) {
+        let giftModel : XWGiftModel = XWGiftModel(senderName: "发送人", senderURL: "icon", giftName: "玫瑰花", giftURL: "giftUrl")
+        giftContainerView.showGiftModel(giftModel)
         
     }
     @IBAction func gift2(_ sender: UIButton) {
-        
+        let giftModel2 : XWGiftModel = XWGiftModel(senderName: "发送人2", senderURL: "icon2", giftName: "玫瑰花", giftURL: "giftUrl2")
+        giftContainerView.showGiftModel(giftModel2)
     }
     @IBAction func gift3(_ sender: UIButton) {
-        
+        let giftModel3 : XWGiftModel = XWGiftModel(senderName: "发送人3", senderURL: "icon3", giftName: "玫瑰花", giftURL: "giftUrl3")
+        giftContainerView.showGiftModel(giftModel3)
     }
 
 

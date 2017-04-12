@@ -25,8 +25,7 @@ class XWGiftChannelView: UIView {
     // MARK: - 属性
     var channelState : XWGiftChannelState? = .idle
     var currentNum : Int = 0
-    
-    
+    var cacheNumber : Int = 0 //礼物缓存
     
     var giftModel : XWGiftModel? {
         didSet {
@@ -44,9 +43,24 @@ class XWGiftChannelView: UIView {
             performAnimation()
         }
     }
-    
-
 }
+
+// MARK: - public
+extension XWGiftChannelView {
+    func addCacheNumber()  {
+        if self.channelState == .willEnd {
+            self.performAnimation()
+            NSObject.cancelPreviousPerformRequests(withTarget: self)
+        }else{
+            cacheNumber += 1
+        }
+    }
+    
+    class func loadFormNib() -> XWGiftChannelView {
+        return Bundle.main.loadNibNamed("XWGiftChannelView", owner: self, options:nil)?.first as! XWGiftChannelView
+    }
+}
+
 
 //MARK: - UI界面
 extension XWGiftChannelView {
@@ -61,7 +75,6 @@ extension XWGiftChannelView {
     }
 }
 
-//hgsvhkjggchjhg
 // MARK: - 动画
 extension XWGiftChannelView {
     // 弹出
@@ -79,8 +92,15 @@ extension XWGiftChannelView {
         currentNum += 1
         digitLabel.text = "x \(currentNum)"
         digitLabel.showDigitAnimation {
-            self.channelState = .willEnd
-            self.perform(#selector(self.performDidAnim), with: nil, afterDelay: 3)
+            
+            if self.cacheNumber > 0 {
+                self.cacheNumber -= 1
+                self.performAnimation()
+            } else {
+                self.channelState = .willEnd
+                self.perform(#selector(self.performDidAnim), with: nil, afterDelay: 3)
+            }
+            
         }
     }
     
@@ -93,7 +113,7 @@ extension XWGiftChannelView {
         }) { (finished) in
             self.giftModel = nil
             self.frame.origin.x = -self.frame.width
-            endAnimating = .idle
+            self.channelState = .idle
             
         }
     }
