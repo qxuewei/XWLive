@@ -10,7 +10,7 @@ import UIKit
 enum XWGiftChannelState {
     case idle   //闲置
     case animating  //正在执行动画
-    case willEnd    //准备结束
+    case willEnd    //准备结束(等待三秒)
     case endAnimating   //正在消失
 }
 class XWGiftChannelView: UIView {
@@ -23,9 +23,11 @@ class XWGiftChannelView: UIView {
     @IBOutlet weak var digitLabel: XWGiftDigitLabel!
     
     // MARK: - 属性
-    var channelState : XWGiftChannelState? = .idle
+    var channelState : XWGiftChannelState = .idle
     var currentNum : Int = 0
     var cacheNumber : Int = 0 //礼物缓存
+    var complectionCallback : ((XWGiftChannelView) -> Void)? //动画结束回调
+    
     
     var giftModel : XWGiftModel? {
         didSet {
@@ -49,7 +51,7 @@ class XWGiftChannelView: UIView {
 extension XWGiftChannelView {
     func addCacheNumber()  {
         if self.channelState == .willEnd {
-            self.performAnimation()
+            self.performDigitLabelAnim()
             NSObject.cancelPreviousPerformRequests(withTarget: self)
         }else{
             cacheNumber += 1
@@ -78,24 +80,26 @@ extension XWGiftChannelView {
 // MARK: - 动画
 extension XWGiftChannelView {
     // 弹出
-    func performAnimation() {
+   fileprivate func performAnimation() {
+        digitLabel.alpha = 1.0
+        digitLabel.text = " x1"
         UIView.animate(withDuration: 0.25, animations: { 
             self.frame.origin.x = 0
-            self.alpha = 1
+            self.alpha = 1.0
         }) { (finished) in
-            self.performAnimation()
+            self.performDigitLabelAnim()
         }
     }
     
     // 文字跳动
-    func performDigitLabelAnim() {
+   fileprivate func performDigitLabelAnim() {
         currentNum += 1
         digitLabel.text = "x \(currentNum)"
         digitLabel.showDigitAnimation {
             
             if self.cacheNumber > 0 {
                 self.cacheNumber -= 1
-                self.performAnimation()
+                self.performDigitLabelAnim()
             } else {
                 self.channelState = .willEnd
                 self.perform(#selector(self.performDidAnim), with: nil, afterDelay: 3)
@@ -105,16 +109,18 @@ extension XWGiftChannelView {
     }
     
     // 消失
-    func performDidAnim() {
+   @objc fileprivate func performDidAnim() {
         channelState = .endAnimating
         UIView.animate(withDuration: 0.25, animations: { 
-            self.frame.origin.y -= 10
-            self.alpha = 0
+            self.frame.origin.x = UIScreen.main.bounds.width
+            self.alpha = 0.0
         }) { (finished) in
             self.giftModel = nil
             self.frame.origin.x = -self.frame.width
             self.channelState = .idle
-            
+            if (self.complectionCallback != nil) {
+                self.complectionCallback!(self)
+            }
         }
     }
 }

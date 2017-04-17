@@ -32,7 +32,7 @@ class XWGiftContainerView: UIView {
 
 extension XWGiftContainerView {
     func setupUI() {
-        // 1.根据当前的渠道数，创建HYGiftChannelView
+        // 1.根据当前的渠道数，创建GiftChannelView
         let w : CGFloat = frame.width
         let h : CGFloat = kChannelViewH
         let x : CGFloat = 0
@@ -44,8 +44,27 @@ extension XWGiftContainerView {
             channelView.alpha = 0.0
             addSubview(channelView)
             channelViews.append(channelView)
+            
+            channelView.complectionCallback = { mChannelView in
+                //1.取出缓存模型
+                guard self.cacheGiftModels.count > 0  else {
+                    return
+                }
+                //2.存在让闲置的channelView执行动画
+                let firstGiftModel = self.cacheGiftModels.first
+                self.cacheGiftModels.removeFirst()
+                mChannelView.giftModel = firstGiftModel
+                
+                // 4.将数组中剩余有和firstGiftModel相同的模型放入到ChanelView缓存中
+                for i in (0..<self.cacheGiftModels.count).reversed() {
+                    let giftModel = self.cacheGiftModels[i]
+                    if giftModel.isEqual(firstGiftModel) {
+                        mChannelView.addCacheNumber()
+                        self.cacheGiftModels.remove(at: i)
+                    }
+                }
+            }
         }
-
     }
 }
 
@@ -54,10 +73,12 @@ extension XWGiftContainerView {
         // 判断是否存在正在显示的channelView
         if let channelView = checkUsingChannelView(giftModel) {
             channelView.addCacheNumber()
+            return
         }
         // 判断是否存在闲置的channelView
         if let channelView = chectkIdleChannelView() {
             channelView.giftModel = giftModel
+            return
         }
         // 将数据放入缓存
         cacheGiftModels.append(giftModel)
